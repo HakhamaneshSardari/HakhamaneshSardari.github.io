@@ -13,95 +13,148 @@
       margin: 0;
       padding: 0;
     }
+
     .container {
       max-width: 960px;
       margin: auto;
       padding: 40px 20px;
     }
-    img {
-      width: 140px;
-      border-radius: 50%;
-      display: block;
-      margin: auto;
+
+    .top-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
     }
-    h1 {
-      text-align: center;
-      margin-top: 20px;
-    }
+
     .bio {
-      text-align: center;
-      margin: 20px auto 40px;
-      max-width: 700px;
+      flex: 1;
+      min-width: 280px;
     }
-    .links, .projects, .skills {
-      margin: 50px 0;
+
+    .bio h1 {
+      margin-bottom: 10px;
     }
+
+    .bio p {
+      font-size: 16px;
+      color: #444;
+      line-height: 1.6;
+    }
+
+    .profile-pic {
+      flex-shrink: 0;
+    }
+
+    .profile-pic img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+    }
+
+    .links {
+      margin: 30px 0 50px;
+    }
+
     .section-title {
       font-size: 22px;
       margin-bottom: 15px;
       border-bottom: 2px solid #ddd;
       padding-bottom: 5px;
     }
+
     .links a {
       display: inline-block;
-      margin: 6px 10px;
+      margin: 6px 12px 6px 0;
       text-decoration: none;
       color: #0366d6;
       font-weight: 500;
     }
+
+    .projects, .skills {
+      margin: 50px 0;
+    }
+
     .project {
       margin-bottom: 20px;
     }
+
     .project a {
       font-size: 17px;
       font-weight: 600;
       color: #222;
       text-decoration: none;
     }
+
     .project p {
       margin: 4px 0 10px;
       color: #555;
     }
+
     .skills-icons {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
       margin-top: 15px;
     }
+
     .skills-icons img {
       height: 40px;
     }
+
     footer {
       text-align: center;
       margin-top: 50px;
       font-size: 13px;
       color: #aaa;
     }
+
+    @media (max-width: 700px) {
+      .top-section {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .profile-pic {
+        align-self: center;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <!-- Profile Picture and Name -->
-    <img src="passport size.jpg" alt="Hakhamanesh Sardari">
-    <h1>Hakhamanesh Sardari</h1>
 
-    <!-- Bio -->
-    <div class="bio">
-      <p>
-  My academic journey began with a passion for using quantitative methods to solve real-world challenges, leading me to pursue a degree in Statistics. I was ranked in the top 4% of over 144,000 candidates in Iran’s Nationwide University Entrance Exam and earned admission to Shiraz University, renowned for its rigorous Statistics Department.
-During my undergraduate years, I excelled in academic competitions, earning a Bronze Medal from the National Statistics Society for my exceptional performance in applied statistics and programming, particularly in Stochastic Methods, and Linear Models. Beyond my formal studies, I pursued various online courses from renowned institutes and companies to deepen my knowledge of economic data science and principles of data analysis, fueling my passion for the field. I completed the Python for Finance course issued by 365 Data Science, recently audited the Time Series and Survival Analysis course offered by IBM, and participated in a Data Analysis Bootcamp at the University of Tehran. Additionally, I worked as a freelance Data Analyst and Data Scientist, collaborating with different companies remotely, which sharpened my programming and statistical software skills.
-Beyond academics, I led the Statistics Scientific Association at Shiraz University for two years, organizing workshops and webinars with over 500 participants. Collaborating with industry experts, my team and I, hosted and organized events on Data Science and Data Analysis, Python for Data Science, fMRI Analysis, Power BI, etc. to bridge the gap between theoretical knowledge and practical applications of statistics in the industry. My vision was to create opportunities for students to connect with industry professionals, helping them explore potential career paths. Leading the association enhanced my leadership, organizational, and communication skills and underscored my commitment to making a tangible impact in our academic community.
+    <!-- Top Section: Bio and Profile Picture -->
+    <div class="top-section">
+      <div class="bio">
+        <h1>Hakhamanesh Sardari</h1>
+        <p> 
+          During my undergraduate years, I excelled in academic competitions, earning a Bronze Medal from the National Statistics Society for my exceptional performance in applied statistics and programming,
+          particularly in Linear Models and Stochastic Methods. Beyond my formal studies, 
+          I pursued various online courses from renowned institutes and companies to deepen my knowledge of economic data science and principles of data analysis,
+          fueling my passion for the field. Notably, I completed the Supervised Machine Learning course issued by Deeplearning.ai, Python for Data Science offered by Solo Learn,
+          and participated in a Data Analysis Bootcamp at the University of Tehran. Additionally, I worked as a freelance Data Analyst and Data Scientist, collaborating with different companies remotely,
+          which sharpened my programming in Python and R (using libraries such as Tensorflow, Pandas, Numpy, Scipy, Matplotlib, Seaborn, Tidyverse, Ggplot2,) and statistical software skills.
+Beyond academics, I led the Statistics Scientific Association at Shiraz University for one years, organizing workshops and webinars with over 500 participants. Collaborating with industry experts,
+          my team and I, hosted and organized events on Data Science and Data Analysis, Python for Data Science, fMRI Analysis, Power BI, etc. to bridge the gap between theoreticl knowledge and practical applications of statistics in the industry.
+          My vision was to create opportunities for students to connect with industry professionals, helping them explore potential career paths.
+          Leading the association enhanced my leadership, organizational, and communication skills and underscored my commitment to making a tangible impact in our academic community.
 
-      </p>
+        </p>
+      </div>
+      <div class="profile-pic">
+        <img src="passport size.jpg" alt="Hakhamanesh Sardari">
+      </div>
     </div>
 
     <!-- Links -->
     <div class="links">
-      <div class="section-title">🔗 Accounts & Files</div>
+      <div class="section-title">🔗 </div>
       <a href="mailto:hakhasardari@gmail.com">📧 Email</a>
-      <a href="https://github.com/haxamanesh" target="_blank">💻 GitHub</a>
+      <a href="https://github.com/HakhamaneshSardari" target="_blank">💻 GitHub</a>
       <a href="https://www.linkedin.com/in/hakhamanesh-sardari-679208209/" target="_blank">🔗 LinkedIn</a>
-      <a href="Academic-Resume-Hakha-Final.pdf" target="_blank">📄 Resume (PDF)</a>
+      <a href="Academic-Resume-Hakha-Final.pdf" target="_blank">📄 Academic-Resume-Hakha-Final.pdf</a>
     </div>
 
     <!-- Projects -->
