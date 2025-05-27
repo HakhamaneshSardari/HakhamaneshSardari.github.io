@@ -4,24 +4,114 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Hakhamanesh Sardari</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      background: #f8f9fa;
+      font-family: 'Inter', sans-serif;
+      background-color: #f5f7fa;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      width: 100%;
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.05);
       text-align: center;
-      padding: 50px;
     }
+
     img {
+      width: 120px;
       border-radius: 50%;
-      width: 150px;
+      margin-bottom: 20px;
     }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    p.subtitle {
+      font-size: 16px;
+      color: #666;
+      margin-bottom: 25px;
+    }
+
+    .skills, .links {
+      margin: 30px 0;
+    }
+
+    .skills span {
+      display: inline-block;
+      margin: 8px;
+      padding: 8px 16px;
+      background: #edf1f5;
+      border-radius: 20px;
+      font-size: 14px;
+      color: #333;
+    }
+
+    .links a {
+      text-decoration: none;
+      color: #0366d6;
+      margin: 0 10px;
+      font-weight: bold;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 13px;
+      color: #aaa;
+    }
+
   </style>
 </head>
 <body>
-  <img src="profile.jpg" alt="Hakhamanesh Sardari" />
-  <h1>Hello, I'm Hakhamanesh Sardari 👋</h1>
-  <p>Statistics student | Data Science | Quant Finance | Actuarial Science</p>
-  <a href="https://github.com/haxamanesh">GitHub</a> |
-  <a href="https://www.linkedin.com/in/hakhamanesh-sardari-679208209">LinkedIn</a>
+  <div class="container">
+    <img src="profile.jpg" alt="Hakhamanesh Sardari">
+    <h1>Hakhamanesh Sardari</h1>
+    <p class="subtitle">Statistics Student | Data Science Enthusiast | Quantitative Finance | Actuarial Science</p>
+
+    <div class="skills">
+      <h3>🛠️ Skills & Tools</h3>
+      <span>Python</span>
+      <span>R</span>
+      <span>SQL</span>
+      <span>Scikit-learn</span>
+      <span>TensorFlow</span>
+      <span>Pandas</span>
+      <span>NumPy</span>
+      <span>Seaborn</span>
+      <span>Matplotlib</span>
+      <span>Power BI</span>
+      <span>Excel</span>
+      <span>SPSS</span>
+      <span>Minitab</span>
+      <span>Selenium</span>
+    </div>
+
+    <div class="links">
+      <a href="https://github.com/haxamanesh" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/hakhamanesh-sardari-679208209/" target="_blank">LinkedIn</a>
+      <a href="mailto:hakhasardari@gmail.com">Email</a>
+    </div>
+
+    <footer>
+      © 2025 Hakhamanesh Sardari – Built with ❤ for data & numbers.
+    </footer>
+  </div>
 </body>
 </html>
