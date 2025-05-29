@@ -11,62 +11,6 @@ body {
     color: #334155;
     scroll-behavior: smooth;
 }
-/* Toggle Switch Style */
-.theme-toggle {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  z-index: 9999;
-}
-
-.theme-toggle input {
-  display: none;
-}
-
-.theme-toggle .slider {
-  width: 40px;
-  height: 20px;
-  background-color: #ccc;
-  border-radius: 9999px;
-  position: relative;
-  cursor: pointer;
-}
-
-.theme-toggle .slider::before {
-  content: "";
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  background-color: white;
-  border-radius: 9999px;
-  top: 2px;
-  left: 2px;
-  transition: transform 0.3s ease;
-}
-
-.theme-toggle input:checked + .slider::before {
-  transform: translateX(20px);
-}
-
-.theme-toggle input:checked + .slider {
-  background-color: #2563eb;
-}
-
-/* Light Theme (Default) */
-body {
-  background: white;
-  color: #1e293b;
-}
-
-/* Dark Theme using :has() selector (experimental, works in Safari and Chrome 105+) */
-html:has(#theme-switch:checked) body {
-  background-color: #0f172a;
-  color: #f1f5f9;
-}
-
 
 /* Background gradient */
 .bg-gradient {
