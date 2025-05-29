@@ -159,9 +159,9 @@ body {
 }
 
 .profile-picture {
-    width: 20rem;
-    height: 20rem;
-    border-radius: 1rem;
+    width: 16rem;               /* You can adjust this size */
+    height: 16rem;
+    border-radius: 50%; 
     overflow: hidden;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
     transition: all 0.5s ease;
