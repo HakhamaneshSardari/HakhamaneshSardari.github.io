@@ -311,7 +311,7 @@ body {
 @layer demo {
   /* Hide radio buttons */
   input[type="radio"] {
-      position: absolute;
+      position: relative;
       width: 1px;
       height: 1px;
       padding: 0;
