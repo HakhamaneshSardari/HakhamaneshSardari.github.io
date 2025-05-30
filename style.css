@@ -298,13 +298,6 @@ body {
     font-weight: 500;
 }
 
-/* Timeline Styles */
-.timeline-container {
-    position: relative;
-    padding: 2rem 0;
-    margin: 2rem 0;
-}
-
 @import "https://codepen.io/cbolson/pen/rNEdgKo.css" layer(template);
 @layer template, demo;
 
@@ -375,7 +368,7 @@ body {
     
 }
   .cards {
-    position: absolute;
+    position: relative;
     inset: var(--cards-container-padding);
     aspect-ratio: 1;
     border-radius: 50%;
@@ -387,7 +380,7 @@ body {
 
 
   .cards li {
-    position: absolute;
+    position: relative;
     inset: 0;
     margin: 0;
     padding: 0;
@@ -399,7 +392,7 @@ body {
   }
 
   .cards li > label {
-    position: absolute;
+    position: relative;
     inset: 0;
     margin: auto;
     transform: translateY(var(--label-offset));
@@ -415,7 +408,7 @@ body {
   }
   .cards li > label::before{
       content: '';
-      position: absolute;
+      position: relative;
       top: var(--cards-container-padding);
       left: 50%;
       translate: -50% 0;
@@ -429,7 +422,7 @@ body {
 
   .cards li > label::after {
     content: '';
-    position: absolute;
+    position: relative;
     top: 100%;
     left: 50%;
     translate: -50% 5px;
@@ -444,7 +437,7 @@ body {
 
   .cards > li > h2,
   .cards > li > p{
-    position: absolute;
+    position: relative;
     left: 50%;
     text-align: center;
     transform: translate(-50%, 0);
