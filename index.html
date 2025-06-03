@@ -1,206 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hakhamanesh Sardari - Statistician & Aspiring Data Scientist</title>
-    <meta name="description" content="Hakhamanesh Sardari Portfolio">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">   
+    <meta name="description" content="Hakhamanesh Sardari Portfolio" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+        /* RESET + GLOBAL STYLES (from Final.css) */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #334155;
+            scroll-behavior: smooth;
+            background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 50%, #e0e7ff 100%);
+            min-height: 100vh;
+        }
+
+        /* Hero Section */
+        .hero-section { padding: 4rem 1.5rem; max-width: 1280px; margin: 0 auto; }
+        .hero-container {
+            display: flex; flex-direction: column; align-items: center; gap: 3rem;
+        }
+        @media (min-width: 1024px) {
+            .hero-container { flex-direction: row; align-items: flex-start; }
+        }
+        .bio-section { flex: 1; display: flex; flex-direction: column; gap: 1.5rem; }
+        .bio-header { display: flex; flex-direction: column; gap: 1rem; }
+        .main-title {
+            font-size: 3rem; font-weight: 700;
+            background: linear-gradient(135deg, #1e293b, #475569);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .subtitle { font-size: 1.5rem; color: #475569; font-weight: 300; }
+
+        /* Contact Links */
+        .contact-links {
+            display: flex; flex-wrap: wrap; gap: 1rem; padding-top: 1rem;
+        }
+        .btn {
+            display: flex; align-items: center; gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem; text-decoration: none; font-weight: 500;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .btn:hover { transform: scale(1.05); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
+        .btn-blue { background-color: #2563eb; color: white; }
+        .btn-linkedin { background-color: #1e40af; color: white; }
+        .btn-github { background-color: #1f2937; color: white; }
+        .btn-green { background-color: #059669; color: white; }
+
+        /* Profile */
+        .profile-section { position: relative; }
+        .profile-picture {
+            width: 16rem; height: 16rem; border-radius: 50%; overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        .profile-picture img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* CIRCULAR TIMELINE CSS */
+        input[type="radio"] {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+        .cards-container {
+            --base-rotation: 0deg;
+            --full-circle: 360deg;
+            --radius: 40vw;
+            --duration: 200ms;
+            --cards-container-size: calc(var(--radius) * 2);
+            --cards-container-padding: 2rem;
+            --border-color: transparent;
+            --label-offset: calc(var(--radius) * -1 - 1rem);
+            --label-size: 30px;
+            --label-color: #666;
+            --label-color-hover: steelblue;
+            --label-line-h: 0;
+            --label-line-h-current: 2rem;
+            --label-dot-size: 10px;
+            --title-top: 1.5rem;
+            --title-offset-y: 30px;
+            --info-top: 5rem;
+            --info-width: min(70%, 500px);
+            --info-offset-y: 30px;
+            box-sizing: content-box;
+            position: relative;
+            margin: 5rem auto;
+            width: var(--cards-container-size);
+            height: var(--cards-container-size);
+            padding: var(--cards-container-padding);
+        }
+        .cards {
+            position: absolute; inset: var(--cards-container-padding);
+            aspect-ratio: 1; border-radius: 50%; border: 1px solid var(--border-color);
+            transition: transform 0.3s ease-in-out var(--duration);
+            list-style: none;
+        }
+        .cards li {
+            position: absolute; inset: 0;
+            transform-origin: center; display: grid; place-content: center;
+            transform: rotate(calc(var(--i) * 360deg / var(--items)));
+            pointer-events: none;
+        }
+        .cards li > label {
+            position: absolute; inset: 0; margin: auto;
+            transform: translateY(var(--label-offset));
+            width: var(--label-size); height: var(--label-size);
+            cursor: pointer; pointer-events: initial; text-align: center;
+            color: var(--label-color); font-size: clamp(.8rem, 2.5vw + .04rem,1rem);
+            transition: var(--duration) ease-in-out;
+        }
+        .cards li > label::before {
+            content: ''; position: absolute; top: var(--cards-container-padding); left: 50%;
+            translate: -50% 0; width: var(--label-dot-size); height: var(--label-dot-size);
+            border-radius: 50%; background-color: var(--label-color);
+        }
+        .cards li > label::after {
+            content: ''; position: absolute; top: 100%; left: 50%; translate: -50% 5px;
+            width: 2px; height: var(--label-line-h); background-color: steelblue;
+        }
+        .cards li > label:hover { --label-color: var(--label-color-hover); }
+        .cards > li > h2, .cards > li > p {
+            position: absolute; left: 50%; text-align: center;
+            transform: translate(-50%, 0); transform-origin: center;
+        }
+        .cards > li > h2 {
+            top: var(--title-top); opacity: var(--title-opacity,0);
+            translate: 0 var(--title-offset-y);
+        }
+        .cards > li > p {
+            top: var(--info-top); margin: 0 auto; width: var(--info-width);
+            font-size: clamp(.8rem, 2.5vw + 0.05rem, .9rem); text-align: left;
+            opacity: var(--info-opacity,0);
+        }
+        li:has(input:checked) {
+            --label-opacity: 1;
+            --label-color: var(--label-color-hover);
+            --label-line-h: var(--label-line-h-current);
+            --title-opacity: 1; --title-offset-y: 0;
+            --info-opacity: 1; --info-offset-y: 0;
+        }
+        .cards:has(input:checked) {
+            transform: rotate(calc(var(--base-rotation) - (var(--index) * var(--full-circle) / var(--items))));
+        }
+        .cards:has(li:nth-child(1)>input:checked) { --index: 0; }
+        .cards:has(li:nth-child(2)>input:checked) { --index: 1; }
+        .cards:has(li:nth-child(3)>input:checked) { --index: 2; }
+        .cards:has(li:nth-child(4)>input:checked) { --index: 3; }
+        .cards:has(li:nth-child(5)>input:checked) { --index: 4; }
+        .cards:has(li:nth-child(6)>input:checked) { --index: 5; }
+    </style>
 </head>
 <body>
-
-<div class="min-h-screen bg-gradient">
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="hero-container">
-            <!-- Bio Section -->
-            <div class="bio-section animate-fade-in">
-                <div class="bio-header">
-                    <h1 class="main-title">Hakhamanesh Sardari</h1>
-                    <h2 class="subtitle">Statistician & Aspiring Data Scientist</h2>
-                    <p class="bio-intro">
-                        I’m an enthusiastic Data geek with a strong foundation in statistics, mathematics, and programming. 
-                        I want to be specialized in time series forecasting, financial modeling, and statistical analysis with a focus 
-                        on real-world solutions.
-                    </p>
-                </div>
-                
-                <!-- Contact Links -->
-                <div class="contact-links">
-                    <a href="mailto:hakhasardari@gmail.com" class="btn btn-blue">
-                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/gmail.svg" alt="Email" width="20" height="20" />
-                    Email
-                    </a>
-                    <a href="https://linkedin.com/in/hakhamanesh-sardari-679208209/" class="btn btn-linkedin" target="_blank">
-                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" alt="LinkedIn" width="20" height="20" />
-                    LinkedIn
-                    </a>
-                    <a href="https://github.com/HakhamaneshSardari" class="btn btn-github" target="_blank">
-                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" alt="GitHub" width="20" height="20" />
-                    GitHub
-                    </a>
-                    <a href="Academic-Resume-Hakha-Final.pdf" class="btn btn-green" target="_blank">
-                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/adobeacrobatreader.svg" alt="CV" width="20" height="20" />
-                    Download CV
-                    </a>
-                </div>
-
-
-                <!-- Timeline Section moved below contact links -->
-                <div class="timeline-container">
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <h3 class="timeline-year">2021 - Present</h3>
-                            <p class="timeline-description">
-                                Freelance data scientist: Developed projects in time series analysis, fraud detection,
-                                clustering, and statistical modeling using Python and R.
-                            </p>
-                        </div>
+    <div class="min-h-screen">
+        <section class="hero-section">
+            <div class="hero-container">
+                <div class="bio-section">
+                    <div class="bio-header">
+                        <h1 class="main-title">Hakhamanesh Sardari</h1>
+                        <h2 class="subtitle">Statistician & Aspiring Data Scientist</h2>
+                        <p>I’m an enthusiastic Data geek with a strong foundation in statistics, mathematics, and programming. I want to be specialized in time series forecasting, financial modeling, and statistical analysis.</p>
                     </div>
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <h3 class="timeline-year">2019 - 2024</h3>
-                            <p class="timeline-description">
-                                BSc in Statistics at Shiraz University. Led data science workshops, 
-                                hosted industry webinars, and earned the Bronze Medal at a national statistics competition.
-                            </p>
-                        </div>
+                    <div class="contact-links">
+                        <a href="mailto:hakhasardari@gmail.com" class="btn btn-blue">Email</a>
+                        <a href="https://linkedin.com/in/hakhamanesh-sardari-679208209/" class="btn btn-linkedin" target="_blank">LinkedIn</a>
+                        <a href="https://github.com/HakhamaneshSardari" class="btn btn-github" target="_blank">GitHub</a>
+                        <a href="Academic-Resume-Hakha-Final.pdf" class="btn btn-green" target="_blank">Download CV</a>
                     </div>
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <h3 class="timeline-year">2018</h3>
-                            <p class="timeline-description">
-                                Ended up my high school with a diploma in Mathematics and Physics.
-                            </p>
-                        </div>
+
+                    <!-- Circular Timeline Inserted Here -->
+                    <div class="cards-container">
+                        <ul class="cards" style="--items: 6;">
+                            <li style="--i: 0;">
+                                <input type="radio" id="item-0" name="gallery-item" checked>
+                                <label for="item-0">2020</label>
+                                <h2>2020</h2>
+                                <p>Began exploring data science through online courses and small projects.</p>
+                            </li>
+                            <li style="--i: 1;">
+                                <input type="radio" id="item-1" name="gallery-item">
+                                <label for="item-1">2021</label>
+                                <h2>2021</h2>
+                                <p>Worked as freelance data scientist on projects including fraud detection and clustering.</p>
+                            </li>
+                            <li style="--i: 2;">
+                                <input type="radio" id="item-2" name="gallery-item">
+                                <label for="item-2">2022</label>
+                                <h2>2022</h2>
+                                <p>Continued academic research in time series analysis at university level.</p>
+                            </li>
+                            <li style="--i: 3;">
+                                <input type="radio" id="item-3" name="gallery-item">
+                                <label for="item-3">2023</label>
+                                <h2>2023</h2>
+                                <p>Published thesis on forecasting methods; won national competition in statistics.</p>
+                            </li>
+                            <li style="--i: 4;">
+                                <input type="radio" id="item-4" name="gallery-item">
+                                <label for="item-4">2024</label>
+                                <h2>2024</h2>
+                                <p>Graduated with BSc in Statistics from Shiraz University; built portfolio website.</p>
+                            </li>
+                            <li style="--i: 5;">
+                                <input type="radio" id="item-5" name="gallery-item">
+                                <label for="item-5">2025</label>
+                                <h2>2025</h2>
+                                <p>Applying for MSc in Computational Finance. Preparing for new opportunities.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="profile-section">
+                    <div class="profile-picture">
+                        <img src="passport size.jpg" alt="Profile Picture" />
                     </div>
                 </div>
             </div>
-
-            <!-- Profile Picture -->
-            <div class="profile-section">
-                <div class="profile-picture">
-                    <img src="passport size.jpg" alt="Profile Picture" />
-                </div>
-                <div class="decoration decoration-1"></div>
-                <div class="decoration decoration-2"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section class="projects-section">
-        <h3 class="section-title">Featured Projects</h3>
-        <div class="projects-grid">
-            <div class="project-card">
-                <div class="project-content">
-                    <a href="https://github.com/HakhamaneshSardari/Bank-Data-Time-Series-Analysis" class="btn btn-default">
-                        <h4 class="project-title">Tehran Stock Index Forecasting</h4>   
-                    </a>
-                    <p class="project-description">
-                        Applied AR, MA, and ARIMA models in R for predicting trends in the Tehran stock exchange index.
-                    </p>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-content">
-                    <a href="https://github.com/HakhamaneshSardari/-Fraud-Detection-Modeling-using-XGBoost" class="btn btn-default">
-                        <h4 class="project-title">Insurance Fraud Detection</h4>
-                    </a>
-                    <p class="project-description">
-                        Built a classification model using XGBoost and SMOTE to detect fraudulent claims with 98.6% accuracy.
-                    </p>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-content">
-                    <a href="https://github.com/HakhamaneshSardari/Online-Shopping-Clustering" class="btn btn-default">
-                        <h4 class="project-title">Online Shopper Clustering</h4>
-                    </a>
-                    <p class="project-description">
-                        Performed K-Means clustering on shopping data using Python to identify key consumer segments.
-                    </p>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-content">
-                    <a href="https://github.com/HakhamaneshSardari/Glass-Type-Classification-" class="btn btn-default">
-                        <h4 class="project-title">Glass Type Classification</h4>
-                    </a>
-                    <p class="project-description">
-                        Implemented SVD, GDB, DT, RF, and MNN algorithms for classification tasks using Python.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section class="skills-section">
-        <h3 class="section-title">Technical Skills</h3>
-        <div class="skills-grid">
-            <div class="skill-card">
-                <h4 class="skill-category">Programming Languages</h4>
-                <div class="skill-list">
-                    <div class="skill-item"><div class="skill-dot skill-dot-blue"></div><span>Python</span></div>
-                    <div class="skill-item"><div class="skill-dot skill-dot-blue"></div><span>R</span></div>
-                    <div class="skill-item"><div class="skill-dot skill-dot-blue"></div><span>SQL</span></div>
-                </div>
-            </div>
-            <div class="skill-card">
-                <h4 class="skill-category">Libraries</h4>
-                <div class="skill-list">
-                    <div class="skill-item"><div class="skill-dot skill-dot-green"></div><span>Pandas</span></div>
-                    <div class="skill-item"><div class="skill-dot skill-dot-green"></div><span>Numpy</span></div>
-                    <div class="skill-item"><div class="skill-dot skill-dot-green"></div><span>Scipy</span></div>
-                    <div class="skill-item"><div class="skill-dot skill-dot-green"></div><span>Scikit-learn</span></div>
-                    <div class="skill-item"><div class="skill-dot skill-dot-green"></div><span>TensorFlow</span></div>
-                    <div class="skill-item"><div class="skill-dot skill-dot-green"></div><span>Matplotlib</span></div>
-                    <div class="skill-item"><div class="skill-dot skill-dot-green"></div><span>Seaborn</span></div>
-                    <div class="skill-item"><div class="skill-dot skill-dot-green"></div><span>Selenium</span></div>
-                    <div class="skill-item"><div class="skill-dot skill-dot-green"></div><span>Tidyverse</span></div>
-                    <div class="skill-item"><div class="skill-dot skill-dot-green"></div><span>Dplyr</span></div>
-                    <div class="skill-item"><div class="skill-dot skill-dot-green"></div><span>Caret</span></div>
-                </div>
-            </div>
-            <div class="skill-card">
-                <h4 class="skill-category">Other Tools</h4>
-                <div class="skill-list">
-                    <div class="skill-item"><div class="skill-dot skill-dot-green"></div><span>SPSS</span></div>
-                    <div class="skill-item"><div class="skill-dot skill-dot-green"></div><span>Minitab</span></div>
-                    <div class="skill-item"><div class="skill-dot skill-dot-green"></div><span>Excel</span></div>
-                    <div class="skill-item"><div class="skill-dot skill-dot-green"></div><span>Rapid Miner</span></div>
-                    <div class="skill-item"><div class="skill-dot skill-dot-green"></div><span>Itsm</span></div>
-                </div>
-            </div>
-            <div class="skill-card">
-                <h4 class="skill-category">Techniques</h4>
-                <div class="skill-list">
-                    <div class="skill-item"><div class="skill-dot skill-dot-purple"></div><span>Statistical Analysis</span></div>
-                    <div class="skill-item"><div class="skill-dot skill-dot-purple"></div><span>Statistical Learning</span></div>
-                    <div class="skill-item"><div class="skill-dot skill-dot-purple"></div><span>Linear Models</span></div>
-                    <div class="skill-item"><div class="skill-dot skill-dot-purple"></div><span>Stochastic Models and Times Series</span></div>
-                    <div class="skill-item"><div class="skill-dot skill-dot-purple"></div><span>A/B Test</span></div>
-                    <div class="skill-item"><div class="skill-dot skill-dot-purple"></div><span>Sampling Methods</span></div>
-                    <div class="skill-item"><div class="skill-dot skill-dot-purple"></div><span>Web Scraping</span></div>
-                </div>
-            </div>
-        </div>
-    </section>
-</div>
-</body>
-<!-- Footer -->
-<footer class="footer">
-    <div class="footer-content">
-        <p>© 2025 Hakhamanesh Sardari. Built with HTML, CSS, and Enthusiasm.</p>
-        <p>All rights reserved. Content and code licensed under <a href="https://opensource.org/licenses/MIT" target="_blank" style="color: #ffffff; text-decoration: underline;">MIT License</a>.</p>
-        <blockquote style="margin-top: 1rem; font-style: italic; color: #94a3b8;">
-        </blockquote>
+        </section>
     </div>
-</footer>
-    
+</body>
 </html>
