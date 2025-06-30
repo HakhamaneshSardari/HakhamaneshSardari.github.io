@@ -191,8 +191,19 @@ body {
   scrollbar-width: thin;
   whitespcae: nowarap;
 }
-
 .timeline-card {
+  flex: 0 0 320px;  /* Standard size */
+  max-width: 320px;
+  scroll-snap-align: center;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  text-align: left;
+  transition: transform 0.3s;
+}
+
+/* .timeline-card {
   background: white;
   border-radius: 15px;
   flex: 0 0 calc(33.33% - 20px);
@@ -202,7 +213,7 @@ body {
   text-align: left;
   transition: transform 0.3s;
   max-width: 500px;
-}
+} */
 
 .timeline-card:hover {
   transform: translateY(-5px);
