@@ -181,7 +181,7 @@ body {
   margin-bottom: 30px;
 }
 
-.timeline-carousel {
+/* .timeline-carousel {
   display: flex;
   overflow-x: auto;
   gap: 20px;
@@ -190,7 +190,28 @@ body {
   scroll-behavior: smooth;
   scrollbar-width: thin;
   whitespcae: nowarap;
+} */
+.timeline-carousel {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  gap: 20px;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 20px 60px; /* creates space on left and right */
+  justify-content: flex-start;
+  width: 100%;
+  box-sizing: border-box;
 }
+
+.timeline-carousel::-webkit-scrollbar {
+  height: 8px;
+}
+.timeline-carousel::-webkit-scrollbar-thumb {
+  background-color: #cfdaf2;
+  border-radius: 4px;
+}
+
 .timeline-card {
   flex: 0 0 320px;  /* Standard size */
   max-width: 320px;
