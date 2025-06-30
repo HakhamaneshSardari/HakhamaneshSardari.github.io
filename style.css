@@ -201,7 +201,7 @@ body {
   text-align: left;
   transition: transform 0.3s;
   max-width: 500px;
-  min-widthp: 200px;
+  min-width: 200px;
 }
 
 .timeline-card:hover {
