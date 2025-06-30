@@ -175,6 +175,14 @@ body {
   text-align: center;
   overflow: hidden;
 }
+.full-image-inline {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 12px;
+  margin-top: 12px;
+  object-fit: cover;
+}
+
 
 .timeline-section h2 {
   font-size: 2rem;
