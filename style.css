@@ -208,7 +208,7 @@ body {
 }
 
 .timeline-card img {
-  width: 100%;
+  width: max-width;
   height: 180px;
   object-fit: cover;
 }
