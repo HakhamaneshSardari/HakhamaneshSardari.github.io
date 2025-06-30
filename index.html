@@ -237,3 +237,16 @@
 </footer>
     
 </html>
+<script>
+  document.querySelectorAll('.progress-step').forEach(step => {
+    step.addEventListener('click', () => {
+      const targetId = step.getAttribute('data-target');
+      const targetCard = document.getElementById(targetId);
+      targetCard?.scrollIntoView({ behavior: 'smooth', inline: 'start' });
+
+      // Highlight active step
+      document.querySelectorAll('.progress-step').forEach(s => s.classList.remove('active'));
+      step.classList.add('active');
+    });
+  });
+</script>
