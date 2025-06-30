@@ -202,6 +202,141 @@ body {
     animation-delay: 1s;
 }
 
+/* Timeline Section */
+.timeline-section {
+  background-color: #f5f9ff;
+  padding: 40px 20px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.timeline-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.timeline-carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 20px;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+}
+
+.timeline-card {
+  background: white;
+  border-radius: 15px;
+  flex: 0 0 calc(33.33% - 20px);
+  scroll-snap-align: start;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  text-align: left;
+  transition: transform 0.3s;
+  min-width: 300px;
+}
+
+.timeline-card:hover {
+  transform: translateY(-5px);
+}
+
+.timeline-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.timeline-content {
+  padding: 20px;
+}
+
+.timeline-date {
+  color: #3a82f7;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.timeline-content h3 {
+  font-size: 1.2rem;
+  margin: 5px 0 10px;
+}
+
+.timeline-content p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin-bottom: 15px;
+}
+
+.learn-more {
+  display: inline-block;
+  padding: 8px 16px;
+  border: 2px solid #3a82f7;
+  color: #3a82f7;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s;
+}
+
+.learn-more:hover {
+  background: #3a82f7;
+  color: #fff;
+}
+
+/* Timeline Progress */
+.timeline-progress {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  position: relative;
+  padding: 20px 0 0;
+}
+
+.timeline-progress::before {
+  content: '';
+  position: absolute;
+  top: 25px;
+  left: 10%;
+  width: 80%;
+  height: 4px;
+  background: #cfdaf2;
+  z-index: 0;
+  border-radius: 2px;
+}
+
+.progress-step {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  width: 33.33%;
+  cursor: pointer;
+}
+
+.progress-step span {
+  display: inline-block;
+  background: #3a82f7;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 50%;
+  font-weight: bold;
+  margin-bottom: 5px;
+  transition: background 0.3s;
+}
+
+.progress-step:not(.active) span {
+  background: #cfdaf2;
+}
+
+.progress-step small {
+  display: block;
+  font-size: 0.75rem;
+  color: #333;
+}
+
 /* Projects Section */
 .projects-section {
     padding: 4rem 1.5rem;
@@ -296,136 +431,6 @@ body {
 .project-link span {
     font-size: 0.875rem;
     font-weight: 500;
-}
-
-/* Timeline Styles */
-/* Timeline Section */
-.timeline-section {
-  background-color: #f5f9ff;
-  padding: 40px 20px;
-  text-align: center;
-}
-
-.timeline-section h2 {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 30px;
-}
-
-.timeline-carousel {
-  display: flex;
-  overflow-x: auto;
-  gap: 20px;
-  scroll-snap-type: x mandatory;
-  padding-bottom: 20px;
-}
-
-.timeline-card {
-  background: white;
-  border-radius: 15px;
-  flex: 0 0 300px;
-  scroll-snap-align: start;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  overflow: hidden;
-  text-align: left;
-  transition: transform 0.3s;
-}
-
-.timeline-card:hover {
-  transform: translateY(-5px);
-}
-
-.timeline-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-
-.timeline-content {
-  padding: 20px;
-}
-
-.timeline-date {
-  color: #3a82f7;
-  font-weight: 600;
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  margin-bottom: 5px;
-}
-
-.timeline-content h3 {
-  font-size: 1.2rem;
-  margin: 5px 0 10px;
-}
-
-.timeline-content p {
-  font-size: 0.95rem;
-  line-height: 1.4;
-  margin-bottom: 15px;
-}
-
-.learn-more {
-  display: inline-block;
-  padding: 8px 16px;
-  border: 2px solid #3a82f7;
-  color: #3a82f7;
-  text-decoration: none;
-  border-radius: 25px;
-  font-weight: 500;
-  transition: background 0.2s, color 0.2s;
-}
-
-.learn-more:hover {
-  background: #3a82f7;
-  color: #fff;
-}
-
-/* Timeline Progress */
-.timeline-progress {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 20px;
-  position: relative;
-  padding: 20px 0 0;
-}
-
-.timeline-progress::before {
-  content: '';
-  position: absolute;
-  top: 25px;
-  left: 10%;
-  width: 80%;
-  height: 4px;
-  background: #cfdaf2;
-  z-index: 0;
-  border-radius: 2px;
-}
-
-.progress-step {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  width: 33.33%;
-}
-
-.progress-step span {
-  display: inline-block;
-  background: #3a82f7;
-  color: #fff;
-  padding: 6px 10px;
-  border-radius: 50%;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-.progress-step:not(.active) span {
-  background: #cfdaf2;
-}
-
-.progress-step small {
-  display: block;
-  font-size: 0.75rem;
-  color: #333;
 }
 
 
