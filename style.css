@@ -200,8 +200,7 @@ body {
   overflow: hidden;
   text-align: left;
   transition: transform 0.3s;
-  min-width: 200px;
-  max-width: 300px;
+  max-width: 250px;
 }
 
 .timeline-card:hover {
