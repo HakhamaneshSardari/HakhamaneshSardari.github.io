@@ -186,9 +186,10 @@ body {
   overflow-x: auto;
   gap: 20px;
   scroll-snap-type: x mandatory;
-  padding-bottom: 20px;
+  padding: 10px 0;
   scroll-behavior: smooth;
   scrollbar-width: thin;
+  whitespcae: nowarap;
 }
 
 .timeline-card {
