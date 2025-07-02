@@ -18,8 +18,8 @@ body {
     min-height: 100vh;
 }
 
-/* Hero Section */
-.hero-section {
+/* Header Section */
+.header-section {
     position: relative;
     padding: 4rem 1.5rem;
     max-width: 1280px;
@@ -99,6 +99,8 @@ body {
 .profile-picture {
     flex: 1;
     flex-grow: 45;
+    width: 16rem;               /* You can adjust this size */
+    height: 16rem;
     max-width: 250px;
     display: flex;
     align-items: center;
