@@ -26,7 +26,7 @@ body {
     margin: 0 auto;
 }
 
-.hero-container {
+.header-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -103,11 +103,6 @@ body {
     display: flex;
     align-items: center;
     padding: 15px;;
-}
-
-.profile-picture:hover {
-    transform: scale(1.05);
-    box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.25);
 }
 
 .profile-picture img {
