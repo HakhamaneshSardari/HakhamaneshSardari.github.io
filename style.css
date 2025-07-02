@@ -99,8 +99,6 @@ body {
 .profile-picture {
     flex: 1;
     flex-grow: 45;
-    width: 16rem;               /* You can adjust this size */
-    height: 16rem;
     max-width: 250px;
     display: flex;
     align-items: center;
