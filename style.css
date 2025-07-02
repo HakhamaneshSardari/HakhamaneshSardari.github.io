@@ -97,12 +97,12 @@ body {
 }
 
 .profile-picture {
-    width: 16rem;               /* You can adjust this size */
-    height: 16rem;
-    border-radius: 50%; 
-    overflow: hidden;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-    transition: all 0.5s ease;
+    flex: 1;
+    flex-grow: 45;
+    max-width: 250px;
+    display: flex;
+    align-items: center;
+    padding: 15px;;
 }
 
 .profile-picture:hover {
@@ -112,32 +112,7 @@ body {
 
 .profile-picture img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.decoration {
-    position: absolute;
     border-radius: 50%;
-    opacity: 0.2;
-    animation: pulse 2s infinite;
-}
-
-.decoration-1 {
-    width: 6rem;
-    height: 6rem;
-    background: linear-gradient(135deg, #60a5fa, #a855f7);
-    top: -1rem;
-    right: -1rem;
-}
-
-.decoration-2 {
-    width: 4rem;
-    height: 4rem;
-    background: linear-gradient(135deg, #34d399, #60a5fa);
-    bottom: -1rem;
-    left: -1rem;
-    animation-delay: 1s;
 }
 
 
