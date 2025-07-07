@@ -60,7 +60,7 @@ body {
   display: none;
 }
 
-#popup-toggle:checked ~ .main-content {
+#popup-toggle:checked ~ .container {
   display: block;
 }
 
