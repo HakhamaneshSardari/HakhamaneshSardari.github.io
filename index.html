@@ -9,11 +9,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">   
 </head>
 <body>
+ <!-- Hidden checkbox to control popup visibility -->
+<input type="checkbox" id="popup-toggle" hidden>
   <!-- Pop-up overlay -->
-<div class="popup-overlay" id="popup">
+<div class="popup-overlay">
     <div class="popup-box">
         <p>🚧 Workers are working right now.</p>
-        <button class="close-btn" onclick="document.getElementById('popup').style.display='none'">✖</button>
+        <label for="popup-toggle" class="close-btn">✖ Exit</label>
     </div>
 </div>
 
