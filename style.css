@@ -65,7 +65,7 @@ body {
 }
 
 /* Hide main content by default */
-.main-content {
+.container {
   display: none;
   padding: 2rem;
 }
